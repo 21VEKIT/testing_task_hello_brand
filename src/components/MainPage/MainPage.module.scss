@@ -1,0 +1,16 @@
+.main {
+  background: url('./images/bg-main.png') no-repeat center / cover;
+  padding: 55px 0 260px 0;
+}
+
+@media screen and (max-width: 1160px) {
+  .main {
+    padding: 55px 0 260px 0
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    padding: 55px 0 100px 0
+  }
+}

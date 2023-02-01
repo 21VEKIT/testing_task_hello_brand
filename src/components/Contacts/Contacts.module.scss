@@ -1,0 +1,73 @@
+@import "../../globalStyles/mixin";
+
+.contacts {
+  padding: 40px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .body {
+      & > .title {
+        @include adaptiv-font(48, 48);
+        font-weight: 700;
+      }
+
+      .items {
+        .item {
+          display: flex;
+          align-items: center;
+          margin-top: 40px;
+
+          .icon {
+            background: #D3B47F;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            position: relative;
+
+            img {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 50%;
+            }
+          }
+
+          .info {
+            margin-left: 16px;
+
+            .title {
+              @include adaptiv-font(16, 16);
+              color: #2E2E2E;
+            }
+
+            .description {
+              @include adaptiv-font(24, 24);
+            }
+          }
+        }
+      }
+    }
+
+    .form {
+      .title {
+        @include adaptiv-font(48, 48);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .contacts {
+    .wrapper {
+      flex-direction: column;
+
+      .form {
+        margin-top: 50px;
+      }
+    }
+  }
+}

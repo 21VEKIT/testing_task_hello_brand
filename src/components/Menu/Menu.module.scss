@@ -1,0 +1,92 @@
+@import "../../globalStyles/mixin";
+
+.menu {
+  padding: 109px 0;
+
+  .wrapper {
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      & > div {
+        width: 45%;
+        margin: 0 20px;
+
+        .title {
+          @include adaptiv-font(40, 40 );
+          font-weight: 700;
+          position: relative;
+          padding-bottom: 16px;
+
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 108px;
+            height: 2px;
+            background: #D3B47F;
+            position: absolute;
+            bottom: 0;
+            left: -40px;
+          }
+        }
+
+        .description {
+          color: #808080;
+          margin-top: 16px;
+          @include adaptiv-font(16,16);
+          line-height: 1.5;
+          font-weight: 400;
+        }
+      }
+
+      & > img {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu {
+    padding: 50px 0;
+
+    .wrapper {
+
+      .item {
+        flex-direction: column;
+
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+
+        &:nth-child(even) {
+          flex-direction: column;
+        }
+
+        & > div {
+          width: 90%;
+
+          .title {
+            &::after {
+              left: 0;
+            }
+          }
+        }
+
+        & > img {
+          width: 60%;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

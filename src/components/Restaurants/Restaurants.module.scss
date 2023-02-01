@@ -1,0 +1,106 @@
+@import "../../globalStyles/mixin";
+
+.restaurants {
+  padding: 80px 0;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .restaurantsList {
+      width: 40%;
+
+      .listElement {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #E7E7E7;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+
+        .title {
+          @include adaptiv-font(24, 16);
+          font-weight: 600;
+        }
+
+        .description {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+
+          div {
+            @include adaptiv-font(18, 12);
+          }
+
+          div:nth-child(2) {
+            display: flex;
+            align-items: center;
+            margin: 0 12px;
+
+            span {
+              width: 5px;
+              height: 5px;
+              background: #D3B47F;
+              display: block;
+              border-radius: 50%;
+
+              &:not(:last-child) {
+                margin-right: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .previewPhoto {
+      display: flex;
+      width: 50%;
+      justify-content: space-between;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        border: 2px solid #D3B47F;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img {
+        width: 45%;
+        z-index: 2;
+        position: relative;
+
+        &:first-child {
+          transform: translateY(50px);
+        }
+
+        &:last-child {
+          transform: translateY(-50px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .restaurants {
+    .wrapper {
+      flex-direction: column-reverse;
+
+      .restaurantsList {
+        margin-top: 100px;
+        width: 100%;
+      }
+
+      .previewPhoto {
+        width: 70%;
+      }
+    }
+  }
+}

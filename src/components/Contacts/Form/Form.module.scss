@@ -1,0 +1,51 @@
+@import "../../../globalStyles/mixin";
+
+.form {
+  margin-top: 40px;
+
+  .data {
+    display: flex;
+
+    & > div {
+      width: 50%;
+
+       &:first-child {
+         margin-right: 10px;
+       }
+    }
+  }
+
+  .textarea {
+    margin-top: 30px;
+  }
+
+  button {
+    background: #3A4574;
+    width: 270px;
+    color: white;
+    @include adaptiv-font(24, 24);
+    padding: 20px 0;
+    margin-top: 30px;
+    transition: .5s all ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.alert {
+  position: fixed;
+  bottom: 20px;
+  left: 40px;
+}
+
+@media screen and (max-width: 750px) {
+  .form {
+    button {
+      display: block;
+      margin: 20px auto 0 auto;
+    }
+  }
+}

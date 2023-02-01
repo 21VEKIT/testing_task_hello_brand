@@ -1,0 +1,31 @@
+.reviews {
+  background: #3A4574;
+  padding: 200px 0;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .swiper {
+      width: 785px;
+      max-width: 80%;
+    }
+
+    & > img {
+      width: 35px;
+      cursor: pointer;
+      max-width: 5%;
+
+      &:last-child {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .reviews {
+    padding: 50px 0;
+  }
+}

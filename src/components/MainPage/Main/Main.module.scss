@@ -1,0 +1,120 @@
+@import "../../../globalStyles/mixin";
+
+.main {
+  margin-top: 154px;
+
+  .description {
+    font-family: 'Poppins';
+    color: white;
+    @include adaptiv-font(24, 24);
+  }
+
+  .title {
+    font-family: 'Poppins';
+    @include adaptiv-font(64, 35);
+    font-weight: 700;
+    color: white;
+    margin-top: 24px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 45px;
+
+    button {
+      @include adaptiv-font(28, 18);
+      background: #3A4574;
+      border: none;
+      color: white;
+      padding: 30px 40px;
+      cursor: pointer;
+      transition: 0.5s all ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 2px white;
+      }
+    }
+
+    .items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+       & > div {
+         border: 1px solid white;
+         color: white;
+         width: 48px;
+         height: 48px;
+         border-radius: 50%;
+         text-align: center;
+         line-height: 48px;
+
+         &:not(:last-child) {
+           margin-right: 25px;
+         }
+       }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  min-width: 300px;
+  background: white;
+  padding: 40px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 8px gold;
+  z-index: 4;
+
+  .close {
+    @include adaptiv-font(64, 64);
+    font-weight: bold;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 10px;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .text {
+    width: 90%;
+    margin: 20px auto 0 auto;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto 0 auto;
+    background: #3A4574;
+    color: white;
+    padding: 20px 40px;
+    @include adaptiv-font(16, 16);
+    cursor: pointer;
+    transition: .5s all ease;
+    border: none;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    margin-top: 100px;
+
+    .buttons {
+      flex-direction: column;
+
+      .items {
+        margin-top: 40px;
+      }
+    }
+  }
+}
